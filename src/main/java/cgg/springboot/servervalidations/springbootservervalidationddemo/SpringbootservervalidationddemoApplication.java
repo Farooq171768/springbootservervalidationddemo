@@ -1,0 +1,13 @@
+package cgg.springboot.servervalidations.springbootservervalidationddemo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringbootservervalidationddemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringbootservervalidationddemoApplication.class, args);
+	}
+
+}
