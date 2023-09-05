@@ -32,7 +32,7 @@ public class MyController {
         }
         System.out.println(loginData);
 
-        //Data process
+        //Data process logic if any
         return  "success";
     }
 }

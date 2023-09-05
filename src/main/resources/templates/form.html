@@ -17,7 +17,14 @@
                   id="exampleInputEmail1"
                    aria-describedby="emailHelp"
                    name="userName" 
-                   th:value="${loginData.userName}">
+                   th:value="${loginData.userName}"
+                   th:classappend="${#fields.hasErrors('userName')?'is-invalid':''}">
+
+                   <!-- Displaying errors on form -->
+                   <div th:each="e:${#fields.errors('userName')}" th:text="${e}"
+                   id="validationServerUsernameFeedback" class="invalid-feedback">
+                    
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Email</label>
@@ -25,11 +32,23 @@
                   class="form-control" 
                   id="exampleInputPassword1"
                   name="email"
-                  th:value="${loginData.email}">
+                  th:value="${loginData.email}"
+                  th:classappend="${#fields.hasErrors('email')?'is-invalid':''}">
+
+                  <!-- Displaying errors on form -->
+                  <div th:each="e:${#fields.errors('email')}" th:text="${e}"
+                   id="validationServerUsernameFeedback" class="invalid-feedback">   
+                  </div>
                 </div>
                 <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1" name="agreed">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" name="agreed"
+                  th:classappend="${#fields.hasErrors('agreed')?'is-invalid':''}">
                   <label class="form-check-label" for="exampleCheck1">Agrre Terms & Conditions</label>
+
+                  <!-- Displaying errors on form -->
+                  <div th:each="e:${#fields.errors('agreed')}" th:text="${e}"
+                   id="validationServerUsernameFeedback" class="invalid-feedback">
+                  </div>
                 </div>
                 <div class="container text-center">
                     <button type="submit" class="btn btn-primary">Submit</button>

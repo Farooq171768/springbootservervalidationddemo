@@ -1,5 +1,6 @@
 package cgg.springboot.servervalidations.springbootservervalidationddemo.entities;
 
+import cgg.springboot.servervalidations.springbootservervalidationddemo.validations.ImageNameValidate;
 import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -12,7 +13,12 @@ public class LoginData{
                          @Pattern(regexp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", message = "Invalid email!")
                          private String email;
                         @AssertTrue(message = "Must agree Terms&Conditions")
-                        private boolean agreed= false;
+                        private boolean agreed;
+
+
+                        // Custom Validator
+                        @ImageNameValidate
+                        private String imageName;
 
     public LoginData(){
         //default constructor
